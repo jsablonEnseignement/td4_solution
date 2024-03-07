@@ -1,3 +1,7 @@
+import { useState } from "react";
+
 export const Demo = () => {
-    return <>Hello from our first component!</>;
+    const [name, setName] = useState("John DOE")
+    
+    return <>Hello {name}, this is our first component and we are using state variable!</>;
 };
