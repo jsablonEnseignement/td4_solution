@@ -1,7 +1,10 @@
-"use client" 
+"use client"
+import { Demo } from "./components/Demo/Demo";
+
+ 
   
 export default function Home() {
   return (
-    <>Hello from React!</>
+    <Demo />
   );
 }
