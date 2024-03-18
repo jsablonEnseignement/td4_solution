@@ -1,11 +1,14 @@
 import axios from "axios";
+import { useEffect } from "react";
 
 export const Students = () => {
-    const fetchStudents = async () => {
-        const { data } = await axios.get(`http://localhost:5000/students`);
-        console.log(data);
-    };
-        
-    return <button onClick={() => fetchStudents()}>Récupérer les étudiants</button>;
-};
+    useEffect(() => {
+        const fetchStudents = async () => {
+            const { data } = await axios.get(`http://localhost:5000/students`);
+            console.log(data)
+        };
+        fetchStudents();
+    });
     
+    return <></>;
+};
