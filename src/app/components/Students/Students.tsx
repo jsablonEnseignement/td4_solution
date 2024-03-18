@@ -29,6 +29,21 @@ export const Students = () => {
       console.log("newStudent: ", newStudent);
       setStudents([...students, newStudent]);
     };
+
+    const editStudent = async (data: Partial<StudentType>) => {
+      const updatedStudent = (
+        await axios.put(`http://localhost:5000/students/${data._id}`, data)
+      ).data;
+  
+      const studentsUpdated = students.map((student) => {
+        if (student._id === updatedStudent._id) {
+          student = updatedStudent;
+        }
+        return student;
+      });
+  
+      setStudents(studentsUpdated);
+    };
     
     return (
         <>
@@ -36,8 +51,9 @@ export const Students = () => {
             {students.length > 0 ? (
             students.map((student) => (
                 <Student
-                key={student._id}
-                student={student}
+                    key={student._id}
+                    student={student}
+                    onEdit={editStudent}
                 />
             ))
             ) : (
