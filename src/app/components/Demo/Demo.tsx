@@ -25,5 +25,8 @@ export const Demo = () => {
                 <li key={language}>{language}</li>
             ))}
         </ul>
+        <Button type="primary">
+            Ceci est un bouton de la librairie Ant Design
+        </Button>
     </>
 };
