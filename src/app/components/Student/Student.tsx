@@ -4,15 +4,17 @@ import {
   EditOutlined,
   CheckOutlined,
   CloseOutlined,
+  DeleteOutlined
 } from "@ant-design/icons";
 import { useState } from "react";
 
 type StudentProps = {
   student: StudentType;
   onEdit: (data: Partial<StudentType>) => void;
+  onDelete: (id: string) => void;
 };
 
-export const Student = ({ student, onEdit }: StudentProps) => {
+export const Student = ({ student, onEdit, onDelete }: StudentProps) => {
   const [editing, setEditing] = useState<boolean>(false);
   const [name, setName] = useState<string>(student.name);
   const [firstname, setFirstname] = useState<string>(student.firstname);
@@ -78,6 +80,12 @@ export const Student = ({ student, onEdit }: StudentProps) => {
             type="primary"
             icon={<EditOutlined />}
             onClick={() => setEditing(true)}
+          />
+          <Button
+            type="primary"
+            danger={true}
+            icon={<DeleteOutlined />}
+            onClick={() => onDelete(student._id)}
           />
         </Space>
       )}

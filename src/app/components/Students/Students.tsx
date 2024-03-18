@@ -44,6 +44,11 @@ export const Students = () => {
   
       setStudents(studentsUpdated);
     };
+
+    const deleteStudent = (id: string) => {
+      axios.delete(`http://localhost:5000/students/${id}`);
+      setStudents(students.filter((student) => student._id !== id));
+    };
     
     return (
         <>
@@ -54,6 +59,7 @@ export const Students = () => {
                     key={student._id}
                     student={student}
                     onEdit={editStudent}
+                    onDelete={deleteStudent}
                 />
             ))
             ) : (
