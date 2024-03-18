@@ -1,10 +1,10 @@
 "use client"
-import { Demo } from "./components/Demo/Demo";
+import { Students } from "./components/Demo/Students/Students";
 
  
   
 export default function Home() {
   return (
-    <Demo />
+    <Students />
   );
 }
