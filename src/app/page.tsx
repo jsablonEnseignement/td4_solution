@@ -1,5 +1,5 @@
 "use client"
-import { Students } from "./components/Demo/Students/Students";
+import { Students } from "./components/Students/Students";
 
  
   
