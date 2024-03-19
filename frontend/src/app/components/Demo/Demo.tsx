@@ -22,7 +22,9 @@ export const Demo = () => {
         <input type="text" defaultValue={name} onChange={(e) => setName(e.target.value)} />
         <ul>
             {languages.map((language) => (
-                <li key={language}>{language}</li>
+                <li key={language}>{language} 
+                    <button onClick={() => console.log("Vous avez cliqué sur " + language)}>select</button>
+                </li>
             ))}
         </ul>
         <Button type="primary">
