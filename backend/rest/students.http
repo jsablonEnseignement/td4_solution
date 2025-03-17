@@ -1,0 +1,36 @@
+### Récupération de tous les étudiants
+GET http://{{host}}:{{port}}/students/
+
+
+### Récupération d'un étudiant
+
+GET http://{{host}}:{{port}}/students/1
+
+
+### Création d'un étudiant
+
+POST http://{{host}}:{{port}}/students/
+content-type: application/json
+
+{
+  "name": "New",
+  "firstname": "Student",
+  "age": 25
+}
+
+
+### Mise à jour d'un étudiant
+
+PUT http://{{host}}:{{port}}/students/3
+content-type: application/json
+
+{
+  "name": "New",
+  "firstname": "Student modified",
+  "age": 30
+}
+
+
+### Suppression d'un étudiant
+
+DELETE http://{{host}}:{{port}}/students/2
