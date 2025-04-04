@@ -14,7 +14,7 @@ export const Students = () => {
             setStudents(data);
         };
         fetchStudents();
-    });
+    }, []);
 
     const addStudent = async (name: string, firstname: string, age: number) => {
       const student = {
@@ -26,7 +26,6 @@ export const Students = () => {
       const newStudent = (
         await axios.post(`http://localhost:5000/students`, student)
       ).data;
-      console.log("newStudent: ", newStudent);
       setStudents([...students, newStudent]);
     };
 
