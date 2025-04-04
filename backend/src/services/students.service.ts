@@ -15,12 +15,13 @@ const createStudent = async (studentToCreate: IStudent) => {
   return getStudents();
 };
 
-const updateStudent = (studentId: string, studentToUpdate: IStudent) => {
-  return Student.updateOne(
+const updateStudent = async (studentId: string, studentToUpdate: IStudent) => {
+  return await Student.findOneAndUpdate(
     {
       _id: new Types.ObjectId(studentId),
     },
-    studentToUpdate
+    studentToUpdate,
+    {new:true}
   );
 };
 
