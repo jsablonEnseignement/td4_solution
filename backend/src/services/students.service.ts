@@ -1,22 +1,22 @@
 import { Types } from "mongoose";
-import { IStudent, Student } from "../models/students.model";
+import { StudentModel, Student } from "../models/students.model";
 
 const getStudents = async () => {
-  return await Student.find();
+  return await StudentModel.find();
 };
 
 const getStudent = async (studentId: string) => {
-  return await Student.findOne({ _id: studentId });
+  return await StudentModel.findOne({ _id: studentId });
 };
 
-const createStudent = async (studentToCreate: IStudent) => {
-  const newStudent = new Student(studentToCreate);
+const createStudent = async (studentToCreate: Student) => {
+  const newStudent = new StudentModel(studentToCreate);
   await newStudent.save();
   return getStudents();
 };
 
-const updateStudent = async (studentId: string, studentToUpdate: IStudent) => {
-  return await Student.findOneAndUpdate(
+const updateStudent = async (studentId: string, studentToUpdate: Student) => {
+  return await StudentModel.findOneAndUpdate(
     {
       _id: new Types.ObjectId(studentId),
     },
@@ -26,7 +26,7 @@ const updateStudent = async (studentId: string, studentToUpdate: IStudent) => {
 };
 
 const deleteStudent = async (studentId: string) => {
-  await Student.deleteOne({ _id: studentId });
+  await StudentModel.deleteOne({ _id: studentId });
 };
 
 export {
