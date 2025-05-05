@@ -10,7 +10,7 @@ import { useState } from "react";
 
 type StudentProps = {
   student: StudentType;
-  onEdit: (data: Partial<StudentType>) => void;
+  onEdit: (data: StudentType) => void;
   onDelete: (id: string) => void;
 };
 

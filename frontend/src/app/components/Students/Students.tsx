@@ -29,7 +29,7 @@ export const Students = () => {
       setStudents([...students, newStudent]);
     };
 
-    const editStudent = async (data: Partial<StudentType>) => {
+    const editStudent = async (data: StudentType) => {
       const updatedStudent = (
         await axios.put(`http://localhost:5000/students/${data._id}`, data)
       ).data;
