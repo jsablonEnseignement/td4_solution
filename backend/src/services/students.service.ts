@@ -11,8 +11,7 @@ const getStudent = async (studentId: string) => {
 
 const createStudent = async (studentToCreate: Student) => {
   const newStudent = new StudentModel(studentToCreate);
-  await newStudent.save();
-  return getStudents();
+  return await newStudent.save();
 };
 
 const updateStudent = async (studentId: string, studentToUpdate: Student) => {
